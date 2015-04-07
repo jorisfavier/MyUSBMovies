@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="MyUSBMovieApp">
+  <head>
+    <title>MyUSBMovies</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="bower_components/bootstrap-material-design/dist/css/material.min.css" rel="stylesheet">
+    <link href="assets/css/icon-moon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <div class="contain">
+      <div class="content" ng-view>
+
+      </div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-morph/dist/angular-morph.js"></script>
+    <script src="assets/libs/angular-route.min.js"></script>
+    <script src="assets/libs/angular-deckgrid.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/components/home/homeController.js"></script>
+  </body>
+</html>

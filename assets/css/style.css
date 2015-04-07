@@ -1,0 +1,311 @@
+* {
+  box-sizing: border-box;
+}
+
+/* demo login form */
+.login {
+  background: #1BBA9A;
+  width: 400px;
+  height: 400px;
+  color: #F0F1F0;
+  font-weight: bold;
+}
+.close {
+  margin: 10px;
+  z-index: 2000;
+  font-size: 25px;
+  float: right;
+  cursor: pointer;
+  color: rgb(19, 146, 121);
+}
+.close:hover {
+  color: #F0F1F0;
+}
+form {
+  position: relative;
+  text-align: left;
+  padding: 25px;
+}
+form p {
+  margin-bottom: 5px;
+}
+form label {
+  display: block;
+  font-size: 16px;
+  padding: 10px 0 0;
+  color: #FCFCFC;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+form input {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #F0F1F0;
+  background: transparent;
+  color: #F0F1F0;
+  font-weight: 300;
+  font-size: 24px;
+}
+form input:focus {
+  outline: 0;
+}
+form button {
+  display: block;
+  margin-top: 30px;
+  padding: 1em;
+  width: 100%;
+  border: none;
+  background: #F0F1F0;
+  color: #1BBA9A;
+  letter-spacing: 1px;
+  line-height: 0;
+  font-size: 17px;
+}
+
+body, .form-control {
+    font-family: 'Dosis', sans-serif;
+    background: #fff;
+}
+
+
+h1{
+  margin-bottom: 40px;
+  font-size: 2.1em;
+  text-align: center;
+}
+h3{
+  font-size: 1.17em;
+  margin-top: 15px;
+}
+
+.deckgrid[deckgrid]::before {
+    /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
+    content: '4 .column.column-1-4';
+    font-size: 0; /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
+    visibility: hidden;
+}
+
+.deckgrid .column {
+    float: left;
+}
+
+.deckgrid .column-1-4 { width: 23%; margin: 0 14px; }
+.deckgrid .column-1-4 > div { margin: 10px 0;}
+.deckgrid .column-1-4 img{ width: 100%; }
+
+
+
+/* Common style */
+.cover figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  width: 100%;
+  height: auto;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cover figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+
+.cover figure figcaption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cover figure figcaption::before,
+.cover figure figcaption::after {
+  pointer-events: none;
+}
+
+.cover figure figcaption,
+.cover figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.cover figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.cover figure h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+
+.cover figure h2 span {
+  font-weight: 800;
+}
+
+.cover figure h2,
+.cover figure p {
+  margin: 0;
+}
+
+.cover figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+
+/*-----------------*/
+/***** Winston *****/
+/*-----------------*/
+
+figure.effect-winston {
+  background: #162633;
+  text-align: left;
+}
+
+figure.effect-winston img {
+  -webkit-transition: opacity 0.45s;
+  transition: opacity 0.45s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+figure.effect-winston figcaption::before {
+  position: absolute;
+  top: 106px;
+  left: -52px;
+  width: 110%;
+  height: 100%;
+  background: url(../img/triangle.svg) no-repeat center center;
+  background-size: 100% 100%;
+  content: '';
+  -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+  transition: opacity 0.45s, transform 0.45s;
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+
+figure.effect-winston h2 {
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0,20px,0);
+  transform: translate3d(0,20px,0);
+}
+
+figure.effect-winston p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0 1.5em 5% 0;
+}
+
+figure.effect-winston button {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 170%;
+  border-radius: 30px;
+}
+.more-info i {
+  font-size: 2em;
+}
+
+figure.effect-winston button:hover,
+figure.effect-winston button:focus {
+  color: #fff;
+}
+
+figure.effect-winston p button i {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,50px,0);
+  transform: translate3d(0,50px,0);
+  margin-left: 2px;
+}
+figure.effect-winston p button {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s !important;
+  transition: opacity 0.35s, transform 0.35s !important;
+  -webkit-transform: translate3d(0,67px,0);
+  transform: translate3d(0,67px,0);
+  margin-left: 2px;
+}
+
+figure.effect-winston:hover img {
+  opacity: 0.6;
+}
+
+figure.effect-winston:hover h2 {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+figure.effect-winston:hover figcaption::before {
+  opacity: 0.7;
+  -webkit-transform: rotate3d(0,0,1,20deg);
+  transform: rotate3d(0,0,1,20deg);
+}
+
+figure.effect-winston:hover p i {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+figure.effect-winston:hover p button {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+figure.effect-winston:hover p button:nth-child(3) i {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+
+figure.effect-winston:hover p button:nth-child(2) i {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+figure.effect-winston:hover p button:first-child i {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+button{
+  width: 50px; height:50px; border-radius: 30px; background: #EEE; outline: none; border: none;
+}
+
+
+/* Media queries */
+@media screen and (max-width: 50em) {
+  .content {
+    padding: 0 10px;
+    text-align: center;
+  }
+  .cover figure {
+    display: inline-block;
+    float: none;
+    margin: 10px auto;
+    width: 100%;
+  }
+}
+
