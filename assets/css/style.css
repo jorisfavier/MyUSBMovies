@@ -5,10 +5,9 @@
 /* demo login form */
 .movieInfo {
   background: #0099ef;
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 500px;
   color: #F0F1F0;
-  font-weight: bold;
   border-radius: 30px;
 }
 .close {
@@ -254,7 +253,7 @@ figure.effect-winston:hover p button:first-child i {
 button{
   width: 50px; height:50px; border-radius: 30px; background: #0099ef; outline: none; border: none;
 }
-.movieInfo{ position: relative; padding: 20px;}
+.movieInfo{ position: relative; padding: 20px; font-size: 1.313em;}
 .movieInfo .close { position:absolute; top:0; right: 0; }
 .movieInfo .header,
 .movieInfo .body,
@@ -262,10 +261,20 @@ button{
   background: #0099ef;
   color: #fff;
 }
+.movieInfo .footer{ margin-top: 30px; }
 
-.movieInfo .header { font-weight: bold; border-bottom: 1px solid #fff; padding-bottom: 10px; }
-.movieInfo .header h2{ margin-top: 30px; }
+.movieInfo .header {  border-bottom: 1px solid #fff; padding-bottom: 10px; }
+.movieInfo .header h2{ margin-top: 30px; font-weight: bold; }
 .movieInfo .header  small{  color:#fff; line-height: 2; }
+.movieInfo .body,
+.movieInfo .rating,
+.movieInfo .stars,
+.movieInfo .plot
+{  margin-top: 15px; }
+.movieInfo .label { font-size: 100%; margin-left: 5px; line-height: 2;}
+.movieInfo .plot p, .movieInfo .stars p{ font-size: 100%; text-transform: none; position: relative; padding: 0;}
+.movieInfo .duration { text-align: right;}
+.btn-info:not(.btn-link):not(.btn-flat){ background: #005c91; color: #fff;}
 
 
 /* Media queries */

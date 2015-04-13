@@ -4,10 +4,28 @@
   	<h2>{{movie.Title}}<small class="pull-right">{{movie.Year}}</small></h2>
 </div>
   <div class="body">
+  	<div class="row">
+  		<div ng-init="genres = movie.Genre.split(',');" class="col-lg-8">
+  			<span ng-repeat="genre in genres" class="label">{{genre}}</span>
+  		</div>
+  		<div class="col-lg-4 duration">
+  			{{movie.Runtime}}
+  			<i class="mdi-image-timer"></i>
+  		</div>
+	  	<div class="col-lg-12 rating">
+	  		 <rating max="10" readonly="true" ng-model="movie.imdbRating"></rating> {{movie.imdbRating}}/10
+	  	</div>
+	  	<div class="col-lg-12 plot">
+	  		<p>{{movie.Plot}}</p>
+	  	</div>
+	  	<div class="col-lg-12 stars">
+	  		<p><b>Stars : </b>{{movie.Actors}}</p>
+	  	</div>
+  	</div>
   	
   </div>
   <div class="footer">
-  	Panel heading
+  	<a target="_blank" href="http://imdb.com/title/{{movie.imdbID}}" class="btn btn-info btn-raised">More info</a>
   </div>
   
 </div>

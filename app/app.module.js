@@ -3,6 +3,7 @@ var app= angular.module('MyUSBMovieApp',
     'ngMorph',
     'ngRoute',
     'akoenig.deckgrid',
+    'ui.bootstrap',
   ]);
 
 
