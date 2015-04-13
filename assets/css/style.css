@@ -3,12 +3,13 @@
 }
 
 /* demo login form */
-.login {
-  background: #1BBA9A;
+.movieInfo {
+  background: #0099ef;
   width: 400px;
   height: 400px;
   color: #F0F1F0;
   font-weight: bold;
+  border-radius: 30px;
 }
 .close {
   margin: 10px;
@@ -16,50 +17,12 @@
   font-size: 25px;
   float: right;
   cursor: pointer;
-  color: rgb(19, 146, 121);
+  color: #fff;
+
+  opacity: 0.8;
 }
 .close:hover {
   color: #F0F1F0;
-}
-form {
-  position: relative;
-  text-align: left;
-  padding: 25px;
-}
-form p {
-  margin-bottom: 5px;
-}
-form label {
-  display: block;
-  font-size: 16px;
-  padding: 10px 0 0;
-  color: #FCFCFC;
-  letter-spacing: 1px;
-  font-weight: normal;
-}
-form input {
-  padding: 10px;
-  width: 100%;
-  border: 2px solid #F0F1F0;
-  background: transparent;
-  color: #F0F1F0;
-  font-weight: 300;
-  font-size: 24px;
-}
-form input:focus {
-  outline: 0;
-}
-form button {
-  display: block;
-  margin-top: 30px;
-  padding: 1em;
-  width: 100%;
-  border: none;
-  background: #F0F1F0;
-  color: #1BBA9A;
-  letter-spacing: 1px;
-  line-height: 0;
-  font-size: 17px;
 }
 
 body, .form-control {
@@ -232,11 +195,9 @@ figure.effect-winston button:focus {
 }
 
 figure.effect-winston p button i {
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0,50px,0);
-  transform: translate3d(0,50px,0);
   margin-left: 2px;
 }
 figure.effect-winston p button {
@@ -258,16 +219,16 @@ figure.effect-winston:hover h2 {
 }
 
 figure.effect-winston:hover figcaption::before {
-  opacity: 0.7;
+  opacity: 0.3;
   -webkit-transform: rotate3d(0,0,1,20deg);
   transform: rotate3d(0,0,1,20deg);
 }
 
-figure.effect-winston:hover p i {
+/*figure.effect-winston:hover p i {
   opacity: 1;
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-}
+}*/
 
 figure.effect-winston:hover p button {
   opacity: 1;
@@ -291,8 +252,20 @@ figure.effect-winston:hover p button:first-child i {
 }
 
 button{
-  width: 50px; height:50px; border-radius: 30px; background: #EEE; outline: none; border: none;
+  width: 50px; height:50px; border-radius: 30px; background: #0099ef; outline: none; border: none;
 }
+.movieInfo{ position: relative; padding: 20px;}
+.movieInfo .close { position:absolute; top:0; right: 0; }
+.movieInfo .header,
+.movieInfo .body,
+.movieInfo .footer{
+  background: #0099ef;
+  color: #fff;
+}
+
+.movieInfo .header { font-weight: bold; border-bottom: 1px solid #fff; padding-bottom: 10px; }
+.movieInfo .header h2{ margin-top: 30px; }
+.movieInfo .header  small{  color:#fff; line-height: 2; }
 
 
 /* Media queries */

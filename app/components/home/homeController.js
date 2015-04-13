@@ -1,8 +1,8 @@
 app.controller('HomeCtrl', ['$scope','$rootScope', function ($scope,$rootScope) {
-  $rootScope.example1 = {
+  $rootScope.config = {
     closeEl: '.close',
     modal: {
-      templateUrl: 'app/components/modal/loginform.html'
+      templateUrl: 'app/components/modal/info.html?t=000'
     }
   };
 
