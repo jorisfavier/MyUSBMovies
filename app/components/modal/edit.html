@@ -1,0 +1,21 @@
+<div ng-init="movie = $parent.$parent.card" class="movieInfo noInfo" >
+  <span class="icon-close close"></span>
+  <div class="header">
+  <h2><i class="icon-spell-check"></i> Edit file name</h2>
+</div>
+  <div class="body">
+    <div layout="row">
+      <md-input-container flex="80">
+        <label>File name</label>
+        <input ng-model="movie.title">
+      </md-input-container>
+      <div class="button-container" flex="20">
+        <md-button class="md-raised md-primary"><i class="icon-checkmark"></i> OK</md-button>
+      </div>
+    </div>  
+    
+  </div>
+  <div class="footer">
+  </div>
+  
+</div>

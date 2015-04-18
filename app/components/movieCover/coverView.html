@@ -2,8 +2,10 @@
 	<figure class="effect-winston">
 		<img src="{{card.Poster}}" alt="{{card.Title}}">
 		<figcaption ng-init="settings = mother.config">
-			<p>
-			<button ng-click="mother.populateMovieInfo(card)" ng-morph-modal="settings"><i class="mdi-action-visibility"></i></button>
+			<p class="button-list">
+			<md-button ng-morph-modal="settings" class="md-fab md-primary" aria-label="More details">
+          		<i class="icon-eye"></i>
+			</md-button>
 			</p>
 		</figcaption>			
 	</figure>

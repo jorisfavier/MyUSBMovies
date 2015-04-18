@@ -4,6 +4,7 @@ var app= angular.module('MyUSBMovieApp',
     'ngRoute',
     'akoenig.deckgrid',
     'ui.bootstrap',
+    'ngMaterial'
   ]);
 
 
