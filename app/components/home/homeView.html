@@ -1,4 +1,36 @@
-<div deckgrid class="deckgrid" source="movieList" cardTemplate="app/components/movieCover/coverView.html?t=000"></div>
-<div class="clearfix"></div>
-<h1>Not recognized movies</h1>
-<div deckgrid class="deckgrid" source="movieNotFound" cardTemplate="app/components/movieCover/noCoverView.html?t=000"></div>
+<!-- <div deckgrid class="deckgrid" source="movieList" cardTemplate="app/components/movieCover/coverView.html?t=000"></div> -->
+<md-grid-list
+      md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3" 
+      md-row-height-gt-md="2:3" md-row-height="1:1"
+      md-gutter="8px" md-gutter-gt-sm="15px" id="moviesList">
+	<md-grid-tile ng-repeat="card in movieNotFound" class="cover">
+		<figure class="effect-winston">
+			<figcaption>
+				<h2>{{card.title}}</h2>
+			</figcaption>
+		</figure>	
+		<figure class="effect-winston">
+			<img src="http://placehold.it/300x445" alt="">
+			<figcaption>
+				<p>
+					<md-button ng-morph-modal="configNoCover" class="md-fab" aria-label="More details">
+						<i class="icon-pencil"></i>
+					</md-button>
+				</p>
+			</figcaption>			
+		</figure>
+	</md-grid-tile>
+	<md-grid-tile ng-repeat="card in movieList" class="cover">
+		<figure class="effect-winston">
+			<img src="{{card.Poster}}" alt="{{card.Title}}">
+			<figcaption>
+				<p class="button-list">
+					<md-button ng-morph-modal="config" class="md-fab" aria-label="More details">
+						<i class="icon-eye"></i>
+					</md-button>
+				</p>
+			</figcaption>			
+		</figure>
+	</md-grid-tile>
+
+</md-grid-list>

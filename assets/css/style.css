@@ -6,7 +6,7 @@
 .movieInfo {
   background: #0099ef;
   width: 600px;
-  height: 500px;
+  height: 580px;
   color: #F0F1F0;
   border-radius: 30px;
 }
@@ -66,12 +66,9 @@ h3{
 
 /* Common style */
 .cover figure {
-  position: relative;
   float: left;
   overflow: hidden;
-  margin: 10px 1%;
   width: 100%;
-  height: auto;
   background: #3085a3;
   text-align: center;
   cursor: pointer;
@@ -80,7 +77,7 @@ h3{
 .cover figure img,
 .cover figure .no-cover {
   position: relative;
-  display: block;
+  //display: block;
   min-height: 100%;
   max-width: 100%;
   opacity: 0.8;
@@ -123,6 +120,7 @@ h3{
 .cover figure h2 {
   word-spacing: -0.15em;
   font-weight: 300;
+  z-index: 1;
 }
 
 .cover figure h2 span {
@@ -158,12 +156,12 @@ figure.effect-winston .no-cover {
 }
 
 
-figure.effect-winston h2 {
+/*figure.effect-winston h2 {
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   -webkit-transform: translate3d(0,20px,0);
   transform: translate3d(0,20px,0);
-}
+}*/
 
 figure.effect-winston p {
   position: absolute;
@@ -200,21 +198,26 @@ figure.effect-winston p button.md-button.md-fab {
   opacity: 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s !important;
   transition: opacity 0.35s, transform 0.35s !important;
-  -webkit-transform: translate3d(0,67px,0);
-  transform: translate3d(0,67px,0);
+  -webkit-transform: translate3d(0,75px,0);
+  transform: translate3d(0,75px,0);
   margin-left: 2px;
-  background: #0099ef !important;
 }
+md-content { margin-bottom: 20px;}
+#moviesList figure.effect-winston .md-button,
+#moviesList figure.effect-winston .md-button.md-fab,
+#moviesList figure.effect-winston .md-button:hover,
+#moviesList figure.effect-winston .md-button.md-fab:hover 
+{ background: #0099ef; }
 
 figure.effect-winston:hover img,
 figure.effect-winston:hover .no-cover {
   opacity: 0.7;
 }
 
-figure.effect-winston:hover h2 {
+/*figure.effect-winston:hover h2 {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-}
+}*/
 
 figure.effect-winston:hover figcaption::before {
   opacity: 0.3;
@@ -263,23 +266,43 @@ button.rounded{
 }
 .movieInfo .footer{ margin-top: 30px; }
 
-.movieInfo .header {  border-bottom: 1px solid #fff; padding-bottom: 10px; }
-.movieInfo .header h2{ margin-top: 30px; font-weight: bold; }
+.movieInfo .header {  border-bottom: 1px solid #fff; margin-top: 30px; }
+.movieInfo .header h2{ font-weight: bold; }
 .movieInfo .header  small{  color:#fff; line-height: 2; }
 .movieInfo .body,
 .movieInfo .rating,
-.movieInfo .stars,
-.movieInfo .plot
+.movieInfo .stars
 {  margin-top: 15px; }
-.movieInfo .label { font-size: 100%; margin-left: 5px; line-height: 2;}
+.movieInfo .label { 
+  background: #006DA7;
+  border-radius: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 10px;
+  text-transform: none;
+}
 .movieInfo .plot p, .movieInfo .stars p{ font-size: 100%; text-transform: none; position: relative; padding: 0;}
 .movieInfo .duration { text-align: right;}
 .btn-info:not(.btn-link):not(.btn-flat){ background: #005c91; color: #fff;}
 
 .no-cover{ display: block; width: 310px; height: 445px; background: #eee; }
-.noInfo .button-container { padding: 27px; }
-.noInfo .md-raised.md-primary.md-button.md-default-theme { padding: 5px 20px; }
 .noInfo md-input-container.md-default-theme .md-input { border-color: rgba(255, 255, 255, 0.2); }
+#moviesList figure.effect-winston .noInfo .md-button,
+#moviesList figure.effect-winston .noInfo .md-button.md-fab,
+#moviesList figure.effect-winston .noInfo .md-button:hover,
+#moviesList figure.effect-winston .noInfo .md-button.md-fab:hover,
+#moviesList figure.effect-winston .movieInfo .md-button,
+#moviesList figure.effect-winston .movieInfo .md-button.md-fab,
+#moviesList figure.effect-winston .movieInfo .md-button:hover,
+#moviesList figure.effect-winston .movieInfo .md-button.md-fab:hover
+{ 
+  background: rgb(63, 81, 181);
+  margin-left: 5px;
+  margin-top: 10px;
+  padding: 5px 20px; 
+}
+
 .menuBtn { 
   background-color: transparent;
   border: none;
@@ -288,9 +311,28 @@ button.rounded{
   width: 36px;
   color:#fff;
 }
+.text-right { text-align: right; }
 
 md-sidenav { background: #333; }
+.progress-wrapper{
+    position: relative;
+    margin:20px auto 0;
+    font-size: 40px;
+}
 
+.progress{
+    position: absolute;
+    font-size:0.6em;
+    text-align: center;
+    font-weight: 100;
+    left: 22px;
+    top: 12px;
+}
+.stat-picto{ line-height: 1.2; margin-top: 20px; display: inline-flex; text-transform: none;}
+.stat-picto i { font-size: 2.5em; }
+.text-center { text-align: center; }
+.label-list{ line-height: 6; }
+.list-genre{ list-style: none; padding: 0; margin-top: -5px; margin-top: 10px; }
 
 /* Media queries */
 @media screen and (max-width: 50em) {

@@ -2,9 +2,8 @@ var app= angular.module('MyUSBMovieApp',
   [
     'ngMorph',
     'ngRoute',
-    'akoenig.deckgrid',
-    'ui.bootstrap',
-    'ngMaterial'
+    'ngMaterial',
+    'angular-svg-round-progress',
   ]);
 
 
