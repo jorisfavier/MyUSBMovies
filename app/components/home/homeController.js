@@ -1,4 +1,4 @@
-app.controller('HomeCtrl', ['$scope','$rootScope','Parameters', function ($scope,$rootScope,Parameters) {
+app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', function ($scope,$rootScope,Parameters,$mdToast) {
 	$rootScope.config = {
 		closeEl: '.close',
 		modal: {
@@ -10,6 +10,22 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters', function ($scope
 		modal: {
 	  		templateUrl: 'app/components/modal/edit.html?t=000'
 		}
+	};
+
+	$rootScope.toastDetail = {};
+
+	$rootScope.closeToast = function() {
+    	$mdToast.hide();
+	};
+
+	$rootScope.showToast = function(content,className) {
+		$rootScope.toastDetail.content = content;	
+		$rootScope.toastDetail.className = className;	
+	    $mdToast.show({
+	      templateUrl: 'app/components/toast/toastView.html?t=00',
+	      hideDelay: 4000,
+	      position: "top left"
+	    });
 	};
 
 	$scope.configRoundRate = {
@@ -270,7 +286,9 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters', function ($scope
 		// var regexp="\\."+Parameters.extensions.join("|\\.");
 		// var ext = movie.title.match(new RegExp(regexp, "gi"));
 		// fs.rename(Parameters.directory+movie.title, Parameters.directory+movie.newName+ext[0], function(err) {
-		//     if ( err ) console.log('ERROR: ' + err);
+		//     if ( err ) $rootScope.showToast(Parameters.failRename,'alert');
+			// $rootScope.showToast(Parameters.successRename,'success');
+
 		// });
 		var closeEl = angular.element($event.target).parent().parent().parent().parent().children()[0];
 		angular.element(closeEl).triggerHandler("click");
@@ -298,8 +316,21 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters', function ($scope
 // };
 
 		// $scope.movieList.push(data);
-		infoMovie(cleanTitle(movie.newName));
+		//infoMovie(cleanTitle(movie.newName));
 		$scope.movieNotFound.splice($scope.movieNotFound.indexOf(movie),1);
+	}
+
+	$scope.hideMovie = function(movie){
+		if($scope.movieNotFound.indexOf(movie) >= 0){
+			$scope.movieNotFound.splice($scope.movieNotFound.indexOf(movie),1);
+			$rootScope.showToast(Parameters.successHideFile,'success');
+		}
+		else if($scope.movieList.indexOf(movie) >= 0){
+			$scope.movieList.splice($scope.movieList.indexOf(movie),1);
+			$rootScope.showToast(Parameters.successHideFile,'success');
+		}
+		else
+			$rootScope.showToast(Parameters.failHideFile,'alert');
 	}
 
 }]);

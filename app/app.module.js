@@ -41,4 +41,8 @@ app.constant("Parameters", {
                     ],
     "extensions" : ["mkv","avi","mp4","flv"],
     "directory" : "/Users/joris/Downloads/Folx/movie/",
+    "successRename" : "The file has been renamed with success !",
+    "failRename" : "An error occured when renaming the file !",
+    "successHideFile" : "The file has been hidden from the app with success !",
+    "failHideFile" : "An error occured when hidding the file !",
 });

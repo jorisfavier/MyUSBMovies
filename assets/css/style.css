@@ -207,7 +207,7 @@ figure.effect-winston p button.md-button.md-fab {
   transition: opacity 0.35s, transform 0.35s !important;
   -webkit-transform: translate3d(0,75px,0);
   transform: translate3d(0,75px,0);
-  margin-left: 2px;
+  margin-left: 20px;
 }
 md-content { margin-bottom: 20px;}
 #moviesList figure.effect-winston .md-button,
@@ -245,19 +245,19 @@ figure.effect-winston:hover p button.md-button.md-fab {
   transform: translate3d(0,0,0);
 }
 
-figure.effect-winston:hover p button:nth-child(3) i {
-  -webkit-transition-delay: 0.05s;
-  transition-delay: 0.05s;
+figure.effect-winston:hover p button.md-button.md-fab:nth-child(3) {
+  -webkit-transition-delay: 0.05s !important;
+  transition-delay: 0.05s !important;
 }
 
-figure.effect-winston:hover p button:nth-child(2) i {
-  -webkit-transition-delay: 0.1s;
-  transition-delay: 0.1s;
+figure.effect-winston:hover p button.md-button.md-fab:nth-child(2) {
+  -webkit-transition-delay: 0.1s !important;
+  transition-delay: 0.1s !important;
 }
 
-figure.effect-winston:hover p button:first-child i {
-  -webkit-transition-delay: 0.15s;
-  transition-delay: 0.15s;
+figure.effect-winston:hover p button.md-button.md-fab:first-child {
+  -webkit-transition-delay: 0.15s !important;
+  transition-delay: 0.15s !important;
 }
 
 button.rounded{
@@ -341,7 +341,17 @@ md-sidenav { background: #333; }
 .label-list{ line-height: 6; }
 .list-genre{ list-style: none; padding: 0; margin-top: -5px; margin-top: 10px; }
 .no-cover-title{ position: absolute; top:0; z-index: 100; color: #fff; left: 0; display: block; width: 100%; padding: 20px;  }
-
+.close-toast{ margin-left: 20px; }
+.alert{ 
+  background-color: #f2dede !important;
+  border-color: #ebccd1 !important;
+  color: #a94442 !important;
+}
+.success{ 
+  background-color: #dff0d8 !important;
+  border-color: #d6e9c6 !important;
+  color: #3c763d !important;
+}
 /* Media queries */
 @media screen and (max-width: 50em) {
   .content {
