@@ -106,6 +106,7 @@ h3{
   width: 100%;
   height: 100%;
 }
+.title-no-cover { z-index: 10; }
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
@@ -145,6 +146,9 @@ h3{
 figure.effect-winston {
   background: #162633;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }
 
 figure.effect-winston img,
@@ -156,12 +160,15 @@ figure.effect-winston .no-cover {
 }
 
 
-/*figure.effect-winston h2 {
+figure.effect-winston h2 {
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   -webkit-transform: translate3d(0,20px,0);
   transform: translate3d(0,20px,0);
-}*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
 
 figure.effect-winston p {
   position: absolute;
@@ -267,7 +274,7 @@ button.rounded{
 .movieInfo .footer{ margin-top: 30px; }
 
 .movieInfo .header {  border-bottom: 1px solid #fff; margin-top: 30px; }
-.movieInfo .header h2{ font-weight: bold; }
+.movieInfo .header h2{ font-weight: bold; transform: translate3d(0px, 0px, 0px); }
 .movieInfo .header  small{  color:#fff; line-height: 2; }
 .movieInfo .body,
 .movieInfo .rating,
@@ -333,6 +340,7 @@ md-sidenav { background: #333; }
 .text-center { text-align: center; }
 .label-list{ line-height: 6; }
 .list-genre{ list-style: none; padding: 0; margin-top: -5px; margin-top: 10px; }
+.no-cover-title{ position: absolute; top:0; z-index: 100; color: #fff; left: 0; display: block; width: 100%; padding: 20px;  }
 
 /* Media queries */
 @media screen and (max-width: 50em) {

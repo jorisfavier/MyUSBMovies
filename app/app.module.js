@@ -39,5 +39,6 @@ app.constant("Parameters", {
                     "h264",
                     "mp4",
                     ],
-    "extensions" : ["mkv","avi","mp4","flv"]
+    "extensions" : ["mkv","avi","mp4","flv"],
+    "directory" : "/Users/joris/Downloads/Folx/movie/",
 });

@@ -5,12 +5,8 @@
       md-gutter="8px" md-gutter-gt-sm="15px" id="moviesList">
 	<md-grid-tile ng-repeat="card in movieNotFound" class="cover">
 		<figure class="effect-winston">
-			<figcaption>
-				<h2>{{card.title}}</h2>
-			</figcaption>
-		</figure>	
-		<figure class="effect-winston">
 			<img src="http://placehold.it/300x445" alt="">
+			<h2 class="no-cover-title">{{card.title}}</h2>
 			<figcaption>
 				<p>
 					<md-button ng-morph-modal="configNoCover" class="md-fab" aria-label="More details">

@@ -188,7 +188,7 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters', function ($scope
  "Response":"True"
 }];
 	$scope.movieNotFound = [{
- "title":"Fury",
+ "title":"Ast.Le.Dom.Des.d.2014.FRENCH.720p.BluRay.x264-Goatlove -Zone-Telechargement.com",
  "Year":"2014",
  "Rated":"R",
  "Released":"17 Oct 2014",
@@ -210,59 +210,61 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters', function ($scope
  "Response":"True"
 }];
 
+/************************************ NODE ******************************
 
-	// var fs = require('fs');
-	// var movie = require('node-movie');
-	// var movieTitle = require('movie-title');
-	// $scope.movieNotFound = new Array();
-	// $scope.movieList = new Array();
+	var fs = require('fs');
+	var movie = require('node-movie');
+	var movieTitle = require('movie-title');
+	$scope.movieNotFound = new Array();
+	$scope.movieList = new Array();
 
-	// fs.readdir('/Users/joris/Downloads/Folx/movie/', function (err, files) { // '/' denotes the root folder
-	// 	if (err) throw err;
-	// 	files.forEach( function (file) {
-	// 		fs.lstat('/'+file, function(err, stats) {
-	// 			if (!err && stats.isDirectory()) { //conditing for identifying folders
-	// 				$('ul.list-dir').append('<li class="folder">'+file+'</li>');
-	// 			}
-	// 			else if(isMovieType(file)){
-	// 				//$scope.fileList.push(cleanTitle(file));
-	// 				infoMovie(cleanTitle(file));
-	// 			}
-	// 		});
-	// 	});
+	fs.readdir(Parameters.directory, function (err, files) { // '/' denotes the root folder
+		if (err) throw err;
+		files.forEach( function (file) {
+			fs.lstat('/'+file, function(err, stats) {
+				if (!err && stats.isDirectory()) { //conditing for identifying folders
+					//$('ul.list-dir').append('<li class="folder">'+file+'</li>');
+				}
+				else if(isMovieType(file)){
+					//$scope.fileList.push(cleanTitle(file));
+					infoMovie(cleanTitle(file));
+				}
+			});
+		});
 
-	// });
+	});
 
-	// function infoMovie(title){
+	function infoMovie(title){
+		movie(movieTitle(title.clean), function (err, data) {
+		    $scope.$apply(function () {
+			    if(data.Error || data.Poster=="N/A"){
+			    	console.log(title);
+			    	$scope.movieNotFound.push({'title': title.original, 'newName': title.clean});
+			    }
+			    else{
+			    	$scope.movieList.push(data);
+			    }
+	        });
+		});
+	}
 
-	// 	movie(movieTitle(title), function (err, data) {
-	// 	    $scope.$apply(function () {
-	// 		    if(data.Error || data.Poster=="N/A"){
-	// 		    	console.log(title);
-	// 		    	$scope.movieNotFound.push({'title': title});
-	// 		    }
-	// 		    else{
-	// 		    	$scope.movieList.push(data);
-	// 		    }
-	//         });
-	// 	});
-	// }
+	function cleanTitle(title){
+		var res = {};
+		var regexp="\\."+Parameters.extensions.join("|\\.")
+		var clean = title.replace(new RegExp(regexp, "gi"),'');
+		regexp=Parameters.uselessWords.join("|");
+		clean = clean.replace(new RegExp(regexp, "gi"),'');
+		regexp=Parameters.separators.join("|");
+		clean = clean.replace(new RegExp(regexp, "gi"),' ');
+		return { 'clean' : clean, 'original' : title };
+	}
 
-	// function cleanTitle(title){
-		
-	// 	var regexp="\\."+Parameters.extensions.join("|\\.")
-	// 	var clean = title.replace(new RegExp(regexp, "gi"),'');
-	// 	regexp=Parameters.uselessWords.join("|");
-	// 	clean = clean.replace(new RegExp(regexp, "gi"),'');
-	// 	regexp=Parameters.separators.join("|");
-	// 	clean = clean.replace(new RegExp(regexp, "gi"),' ');
-	// 	return clean;
-	// }
+	function isMovieType(file){
+		var regexp = new RegExp("\\."+Parameters.extensions.join("|\\."),"gi");
+		return regexp.test(file);
+	}
 
-	// function isMovieType(file){
-	// 	var regexp = new RegExp("\\."+Parameters.extensions.join("|\\."),"gi");
-	// 	return regexp.test(file);
-	// }
+	**********************************************************/
 
 	$scope.renameFile = function(movie,$event){
 		// var regexp="\\."+Parameters.extensions.join("|\\.");
@@ -272,32 +274,32 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters', function ($scope
 		// });
 		var closeEl = angular.element($event.target).parent().parent().parent().parent().children()[0];
 		angular.element(closeEl).triggerHandler("click");
-		var data={
- "Title":"Test d'ajout",
- "Year":"2014",
- "Rated":"R",
- "Released":"17 Oct 2014",
- "Runtime":"134 min",
- "Genre":"Action, Drama, War",
- "Director":"David Ayer",
- "Writer":"David Ayer",
- "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
- "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
- "Language":"English, German",
- "Country":"UK, China, USA",
- "Awards":"4 wins & 9 nominations.",
- "Poster":"assets/img/fury.jpg",
- "Metascore":"64",
- "imdbRating":"7.9",
- "imdbVotes":"89,030",
- "imdbID":"tt2713180",
- "Type":"movie",
- "Response":"True"
-};
+// 		var data={
+//  "Title":"Test d'ajout",
+//  "Year":"2014",
+//  "Rated":"R",
+//  "Released":"17 Oct 2014",
+//  "Runtime":"134 min",
+//  "Genre":"Action, Drama, War",
+//  "Director":"David Ayer",
+//  "Writer":"David Ayer",
+//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
+//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
+//  "Language":"English, German",
+//  "Country":"UK, China, USA",
+//  "Awards":"4 wins & 9 nominations.",
+//  "Poster":"assets/img/fury.jpg",
+//  "Metascore":"64",
+//  "imdbRating":"7.9",
+//  "imdbVotes":"89,030",
+//  "imdbID":"tt2713180",
+//  "Type":"movie",
+//  "Response":"True"
+// };
 
-$scope.movieList.push(data);
-console.log($scope.movieNotFound.indexOf(movie));
-$scope.movieNotFound.splice($scope.movieNotFound.indexOf(movie),1);
+		// $scope.movieList.push(data);
+		infoMovie(cleanTitle(movie.newName));
+		$scope.movieNotFound.splice($scope.movieNotFound.indexOf(movie),1);
 	}
 
 }]);

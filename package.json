@@ -1,0 +1,28 @@
+{
+  "name": "nwk-ngApp",
+  "version": "0.0.1",
+  "description": "MyUSBMovies",
+  "main": "index.html",
+  "private": true,
+  "keywords": [
+    "node",
+    "webkit",
+    "win",
+    "osx"
+  ],
+  "window": {
+    "toolbar": true,
+    "resizable": true,
+    "width": 1000,
+    "height": 600,
+    "min_width": 600,
+    "min_height": 400,
+    "position": "center"
+  },
+  "author": "Joris Favier",
+  "license": "MIT",
+  "dependencies": {
+    "node-movie": "^2.0.0",
+    "movie-title": "0.0.1"
+  }
+}
