@@ -9,6 +9,9 @@
 			<h2 class="no-cover-title">{{card.title}}</h2>
 			<figcaption>
 				<p>
+					<md-button ng-click="playMovie(card)" class="md-fab" aria-label="Play this movie">
+						<i class="icon-play3"></i>
+					</md-button>
 					<md-button ng-click="hideMovie(card)" class="md-fab" aria-label="Hide this file">
 						<i class="icon-eye-blocked"></i>
 					</md-button>
@@ -24,6 +27,9 @@
 			<img src="{{card.Poster}}" alt="{{card.Title}}">
 			<figcaption>
 				<p class="button-list">
+					<md-button ng-click="playMovie(card)" class="md-fab" aria-label="Play this movie">
+						<i class="icon-play3"></i>
+					</md-button>
 					<md-button ng-click="hideMovie(card)" class="md-fab" aria-label="Hide this movie">
 						<i class="icon-eye-blocked"></i>
 					</md-button>

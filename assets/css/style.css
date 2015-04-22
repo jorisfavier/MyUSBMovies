@@ -272,6 +272,7 @@ button.rounded{
   color: #fff;
 }
 .movieInfo .footer{ margin-top: 30px; }
+.movieInfo .footer .md-button i{ font-size: 1em; margin-left: 5px; }
 
 .movieInfo .header {  border-bottom: 1px solid #fff; margin-top: 30px; }
 .movieInfo .header h2{ font-weight: bold; transform: translate3d(0px, 0px, 0px); }

@@ -50,7 +50,8 @@
   	
   </div>
   <div class="footer" layout="row">
-    <md-button href="http://imdb.com/title/{{movie.imdbID}}" class="md-raised md-primary">More info</md-button>
+    <md-button ng-click="moreInfo(movie)" class="md-raised md-primary"><i class="icon-link"></i> IMDB Details</md-button>
+    <md-button ng-click="playMovie(movie)" class="md-raised md-primary"><i class="icon-play3"></i> Play</md-button>
   </div>
   
 </div>
