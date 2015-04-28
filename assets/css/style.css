@@ -77,10 +77,11 @@ h3{
 .cover figure img,
 .cover figure .no-cover {
   position: relative;
-  //display: block;
+  display: block;
   min-height: 100%;
   max-width: 100%;
   opacity: 0.8;
+  color:#fff;
 }
 
 
@@ -307,7 +308,6 @@ button.rounded{
   background: rgb(63, 81, 181);
   margin-left: 5px;
   margin-top: 10px;
-  padding: 5px 20px; 
 }
 
 .menuBtn { 
@@ -328,12 +328,13 @@ md-sidenav { background: #333; }
 }
 
 .progress{
-    position: absolute;
-    font-size:0.6em;
-    text-align: center;
+    font-size: 0.6em;
     font-weight: 100;
-    left: 22px;
-    top: 12px;
+    left: 5px;
+    position: absolute;
+    text-align: center;
+    top: 17px;
+    width: 59px;
 }
 .stat-picto{ line-height: 1.2; margin-top: 20px; display: inline-flex; text-transform: none;}
 .stat-picto i { font-size: 2.5em; }
@@ -352,6 +353,36 @@ md-sidenav { background: #333; }
   border-color: #d6e9c6 !important;
   color: #3c763d !important;
 }
+.md-sidenav-left{ background : #333; }
+.md-sidenav-left .titlezone{ background:#262626; }
+md-toolbar h1 {
+  font-weight: normal;
+  color: #FFF;
+}
+.toolbar{ background:#ebf0f1 !important; }
+.genre-list md-item{ padding: 10px 0; }
+.genre-list .md-button {
+  color: #999;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  padding-left: 25px;
+  margin:0;
+}
+.genre-list .md-button:hover { color: #fff; }
+.category-header.md-subheader{ color: #fff; background: none; text-transform: uppercase; font-weight: bold; font-size: 100%; }
+.navbar i{  margin-right: 5px;}
+.toolbar .md-button.filterButton,
+.toolbar .md-button.search-button{ color: #999; margin:0 10px; text-transform: none; font-weight: normal;}
+md-toolbar.toolbar.md-default-theme{  color:#333;}
+.divider{ border-left: 1px solid #999; width: 1px; height: 30px; }
+md-input-container.md-default-theme .md-input.search-input{ margin-top: 25px; color:#999; font-size: 16px; }
+.toolbar .md-button.filterButton.active { color:#0099ef; }
+.genre-list .md-button.active { background: rgba(158,158,158,0.2); color: #fff;}
+
+
+
+
 /* Media queries */
 @media screen and (max-width: 50em) {
   .content {

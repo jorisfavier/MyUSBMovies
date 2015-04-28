@@ -9,19 +9,46 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
-  <body layout="column" >
-    <md-toolbar layout="row">
-      <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
-        <span class="visually-hidden">Menu</span>
-        <i class="icon-menu2"></i>
-      </button>
-      <h1 class="md-toolbar-tools" layout-align-gt-sm="left">MyUSBMovies</h1>
-    </md-toolbar>
+
+  <body layout="column">
     <div layout="row" flex>
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-          
+        <md-sidenav layout="column" class="navbar md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            <md-toolbar class="titlezone" layout="row">
+                <h1 class="md-toolbar-tools" layout-align-gt-sm="center">MyUSBMovies</h1>
+            </md-toolbar>
+            <md-subheader class="category-header"><i class="icon-tag"></i> Categories</md-subheader>
+            <md-list class="genre-list">
+                <md-item>
+                  <md-item-content>
+                    <md-button ng-click="searchText.Genre = ''" ng-class="searchText.Genre == '' ? 'active' : ''">
+                      All
+                    </md-button>
+                  </md-item-content>
+                </md-item>
+                <md-item ng-repeat="genre in genreList" class="">
+                  <md-item-content>
+                    <md-button ng-click="searchText.Genre = genre" ng-class="searchText.Genre == genre ? 'active' : ''">
+                      {{genre}}
+                    </md-button>
+                  </md-item-content>
+                </md-item>
+          </md-list>
         </md-sidenav>
         <div layout="column" flex id="content">
+            <md-toolbar class="toolbar" layout="row">
+                <div class="md-toolbar-tools" layout-align-gt-sm="center">
+                    <md-button ng-click="order = '-Released'" ng-class="order == '-Released'? 'active' : '' " class="filterButton">
+                    <i class="icon-calendar"></i> Release date</md-button>
+                    <div class="divider"></div>
+                    <md-button ng-click="order = '-imdbRating'" ng-class="order != '-Released'? 'active' : ''" class="filterButton">
+                    <i class="icon-star"></i> Popularity</md-button>
+                    <span flex></span>
+                    <md-input-container md-no-float>
+                      <input type="text" class="search-input" ng-model="searchText.Title" placeholder="Search a movie">
+                    </md-input-container>
+                    <md-button class="search-button"><i class="icon-search"></i></md-button>
+                </div>
+            </md-toolbar>
             <md-content layout="column" flex class="md-padding" ng-view>
 
             </md-content>

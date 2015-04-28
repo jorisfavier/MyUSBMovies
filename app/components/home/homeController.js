@@ -55,11 +55,36 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
 		}
 	}
 
-	$scope.movieList = $scope.movieList = [{
+	$rootScope.searchText = {};
+	$rootScope.order = "-imdbRating";
+
+
+	$scope.movieList = [{
  "Title":"Fury",
  "Year":"2014",
  "Rated":"R",
- "Released":"17 Oct 2014",
+ "Released":new Date("17 Oct 2014"),
+ "Runtime":"134 min",
+ "Genre":"Action, Drama",
+ "Director":"David Ayer",
+ "Writer":"David Ayer",
+ "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
+ "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
+ "Language":"English, German",
+ "Country":"UK, China, USA",
+ "Awards":"4 wins & 9 nominations.",
+ "Poster":"assets/img/fury.jpg",
+ "Metascore":"64",
+ "imdbRating":"8",
+ "imdbVotes":"89,030",
+ "imdbID":"tt2713180",
+ "Type":"movie",
+ "Response":"True"
+},{
+ "Title":"Fury",
+ "Year":"2014",
+ "Rated":"R",
+ "Released":new Date("18 Oct 2014"),
  "Runtime":"134 min",
  "Genre":"Action, Drama, War",
  "Director":"David Ayer",
@@ -80,7 +105,7 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
  "Title":"Fury",
  "Year":"2014",
  "Rated":"R",
- "Released":"17 Oct 2014",
+ "Released":new Date("19 Oct 2014"),
  "Runtime":"134 min",
  "Genre":"Action, Drama, War",
  "Director":"David Ayer",
@@ -101,7 +126,49 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
  "Title":"Fury",
  "Year":"2014",
  "Rated":"R",
- "Released":"17 Oct 2014",
+ "Released":new Date("17 Nov 2014"),
+ "Runtime":"134 min",
+ "Genre":"Action, Drama, War",
+ "Director":"David Ayer",
+ "Writer":"David Ayer",
+ "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
+ "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
+ "Language":"English, German",
+ "Country":"UK, China, USA",
+ "Awards":"4 wins & 9 nominations.",
+ "Poster":"assets/img/fury.jpg",
+ "Metascore":"64",
+ "imdbRating":"7.9",
+ "imdbVotes":"89,030",
+ "imdbID":"tt2713180",
+ "Type":"movie",
+ "Response":"True"
+},{
+ "Title":"Fury",
+ "Year":"2015",
+ "Rated":"R",
+ "Released":new Date("17 Sept 2014"),
+ "Runtime":"134 min",
+ "Genre":"Action, Drama, War",
+ "Director":"David Ayer",
+ "Writer":"David Ayer",
+ "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
+ "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
+ "Language":"English, German",
+ "Country":"UK, China, USA",
+ "Awards":"4 wins & 9 nominations.",
+ "Poster":"assets/img/fury.jpg",
+ "Metascore":"64",
+ "imdbRating":"6",
+ "imdbVotes":"89,030",
+ "imdbID":"tt2713180",
+ "Type":"movie",
+ "Response":"True"
+},{
+ "Title":"Fury",
+ "Year":"2014",
+ "Rated":"R",
+ "Released":new Date("17 Oct 2014"),
  "Runtime":"134 min",
  "Genre":"Action, Drama, War",
  "Director":"David Ayer",
@@ -122,70 +189,7 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
  "Title":"Fury",
  "Year":"2014",
  "Rated":"R",
- "Released":"17 Oct 2014",
- "Runtime":"134 min",
- "Genre":"Action, Drama, War",
- "Director":"David Ayer",
- "Writer":"David Ayer",
- "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
- "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
- "Language":"English, German",
- "Country":"UK, China, USA",
- "Awards":"4 wins & 9 nominations.",
- "Poster":"assets/img/fury.jpg",
- "Metascore":"64",
- "imdbRating":"7.9",
- "imdbVotes":"89,030",
- "imdbID":"tt2713180",
- "Type":"movie",
- "Response":"True"
-},{
- "Title":"Fury",
- "Year":"2014",
- "Rated":"R",
- "Released":"17 Oct 2014",
- "Runtime":"134 min",
- "Genre":"Action, Drama, War",
- "Director":"David Ayer",
- "Writer":"David Ayer",
- "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
- "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
- "Language":"English, German",
- "Country":"UK, China, USA",
- "Awards":"4 wins & 9 nominations.",
- "Poster":"assets/img/fury.jpg",
- "Metascore":"64",
- "imdbRating":"7.9",
- "imdbVotes":"89,030",
- "imdbID":"tt2713180",
- "Type":"movie",
- "Response":"True"
-},{
- "Title":"Fury",
- "Year":"2014",
- "Rated":"R",
- "Released":"17 Oct 2014",
- "Runtime":"134 min",
- "Genre":"Action, Drama, War",
- "Director":"David Ayer",
- "Writer":"David Ayer",
- "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
- "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
- "Language":"English, German",
- "Country":"UK, China, USA",
- "Awards":"4 wins & 9 nominations.",
- "Poster":"assets/img/fury.jpg",
- "Metascore":"64",
- "imdbRating":"7.9",
- "imdbVotes":"89,030",
- "imdbID":"tt2713180",
- "Type":"movie",
- "Response":"True"
-},{
- "Title":"Fury",
- "Year":"2014",
- "Rated":"R",
- "Released":"17 Oct 2014",
+ "Released":new Date("17 Oct 2014"),
  "Runtime":"134 min",
  "Genre":"Action, Drama, War",
  "Director":"David Ayer",
@@ -225,6 +229,20 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
  "Type":"movie",
  "Response":"True"
 }];
+
+$rootScope.genreList = genreFilter($scope.movieList);
+function genreFilter(movie){
+	var res = new Array();
+	angular.forEach(movie, function(item) {
+        angular.forEach(item.Genre.split(','),function(genre){
+        	if(res.indexOf(genre)<0){
+        		res.push(genre);
+        	}
+        })
+    });
+    return res;
+
+}
 
 /************************************ NODE ******************************
 
