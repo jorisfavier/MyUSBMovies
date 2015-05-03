@@ -16,6 +16,16 @@
             <md-toolbar class="titlezone" layout="row">
                 <h1 class="md-toolbar-tools" layout-align-gt-sm="center">MyUSBMovies</h1>
             </md-toolbar>
+            <md-subheader class="category-header"><i class="icon-folder"></i> Current movie folder</md-subheader>
+            <md-list class="genre-list">
+                  <md-item-content>
+                    <md-button>
+                        {{currentFolder}}
+                        <input class="file-chooser" type="file" webkitdirectory directory multiple onchange="angular.element(this).scope().reloadMovies(this)"/>
+                    </md-button>
+                  </md-item-content>
+                </md-item>
+          </md-list>
             <md-subheader class="category-header"><i class="icon-tag"></i> Categories</md-subheader>
             <md-list class="genre-list">
                 <md-item>

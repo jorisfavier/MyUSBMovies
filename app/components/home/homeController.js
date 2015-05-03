@@ -59,221 +59,60 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
 	$rootScope.order = "-imdbRating";
 
 
-// 	$scope.movieList = [{
-//  "Title":"Fury",
-//  "Year":"2014",
-//  "Rated":"R",
-//  "Released":new Date("17 Oct 2014"),
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"8",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// },{
-//  "Title":"Fury",
-//  "Year":"2014",
-//  "Rated":"R",
-//  "Released":new Date("18 Oct 2014"),
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama, War",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"7.9",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// },{
-//  "Title":"Fury",
-//  "Year":"2014",
-//  "Rated":"R",
-//  "Released":new Date("19 Oct 2014"),
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama, War",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"7.9",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// },{
-//  "Title":"Fury",
-//  "Year":"2014",
-//  "Rated":"R",
-//  "Released":new Date("17 Nov 2014"),
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama, War",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"7.9",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// },{
-//  "Title":"Fury",
-//  "Year":"2015",
-//  "Rated":"R",
-//  "Released":new Date("17 Sept 2014"),
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama, War",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"6",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// },{
-//  "Title":"Fury",
-//  "Year":"2014",
-//  "Rated":"R",
-//  "Released":new Date("17 Oct 2014"),
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama, War",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"7.9",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// },{
-//  "Title":"Fury",
-//  "Year":"2014",
-//  "Rated":"R",
-//  "Released":new Date("17 Oct 2014"),
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama, War",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"7.9",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// }];
-// 	$scope.movieNotFound = [{
-//  "title":"Ast.Le.Dom.Des.d.2014.FRENCH.720p.BluRay.x264-Goatlove -Zone-Telechargement.com",
-//  "Year":"2014",
-//  "Rated":"R",
-//  "Released":"17 Oct 2014",
-//  "Runtime":"134 min",
-//  "Genre":"Action, Drama, War",
-//  "Director":"David Ayer",
-//  "Writer":"David Ayer",
-//  "Actors":"Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña",
-//  "Plot":"April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy commands a Sherman tank and his five-man crew on a deadly mission behind enemy lines. Out-numbered, out-gunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
-//  "Language":"English, German",
-//  "Country":"UK, China, USA",
-//  "Awards":"4 wins & 9 nominations.",
-//  "Poster":"assets/img/fury.jpg",
-//  "Metascore":"64",
-//  "imdbRating":"7.9",
-//  "imdbVotes":"89,030",
-//  "imdbID":"tt2713180",
-//  "Type":"movie",
-//  "Response":"True"
-// }];
-
-
 	var fs = require('fs');
 	var movie = require('node-movie');
 	var movieTitle = require('movie-title');
 	var gui = require("nw.gui");
+	$scope.loadNb = 0;
 	$scope.movieNotFound = new Array();
 	$scope.movieList = new Array();
+	$rootScope.currentFolder = global.window.root;
+	loadMovies($rootScope.currentFolder);
 
-	fs.readdir(Parameters.directory, function (err, files) { // '/' denotes the root folder
-		if (err) throw err;
-		files.forEach( function (file) {
-			fs.lstat('/'+file, function(err, stats) {
-				if (!err && stats.isDirectory()) { //conditing for identifying folders
-					//$('ul.list-dir').append('<li class="folder">'+file+'</li>');
-				}
-				else if(isMovieType(file)){
-					//$scope.fileList.push(cleanTitle(file));
-					infoMovie(cleanTitle(file));
-				}
+
+	function loadMovies(folder){
+		fs.readdir(folder, function (err, files) { // '/' denotes the root folder
+			if (err) console.log("erreur de lecture de "+folder);
+			$scope.loadNb += files.length;
+			files.forEach( function (file) {
+				fs.lstat(folder+"/"+file, function(err, stats) {
+					if (!err && stats.isDirectory()) { //conditing for identifying folders
+						$scope.loadNb--;
+						loadMovies(folder+"/"+file);
+					}
+					else if(isMovieType(file)){
+						//$scope.fileList.push(cleanTitle(file));
+						infoMovie(cleanTitle(file, folder+"/"));
+					}
+					else
+						$scope.loadNb--;
+				});
 			});
-		});
 
-	});
+		});
+	}
 
 	function infoMovie(title){
 		movie(movieTitle(title.clean), function (err, data) {
 		    $scope.$apply(function () {
 			    if(data.Error || data.Poster=="N/A"){
-			    	console.log(title);
-			    	$scope.movieNotFound.push({'title': title.original, 'newName': title.clean});
+			    	$scope.movieNotFound.push({'title': title.original, 'newName': title.clean, 'fullpath' : title.fullpath});
 			    }
 			    else{
 			    	data.fileName = title.original;
 			    	data.Released = new Date(data.Released);
 			    	data.imdbRating = parseFloat(data.imdbRating);
+			    	data.fullpath = title.fullpath;
 			    	$scope.movieList.push(data);
 					$rootScope.genreList = genreFilter($scope.movieList);
 
 			    }
+			    $scope.loadNb--;
 	        });
 		});
 	}
 
-	function cleanTitle(title){
+	function cleanTitle(title,fullpath){
 		var res = {};
 		var regexp="\\."+Parameters.extensions.join("|\\.")
 		var clean = title.replace(new RegExp(regexp, "gi"),'');
@@ -281,7 +120,7 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
 		clean = clean.replace(new RegExp(regexp, "gi"),'');
 		regexp=Parameters.separators.join("|");
 		clean = clean.replace(new RegExp(regexp, "gi"),' ');
-		return { 'clean' : clean, 'original' : title };
+		return { 'clean' : clean, 'original' : title, 'fullpath' : fullpath };
 	}
 
 	function isMovieType(file){
@@ -292,14 +131,16 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
 	$scope.renameFile = function(movie,$event){
 		var regexp="\\."+Parameters.extensions.join("|\\.");
 		var ext = movie.title.match(new RegExp(regexp, "gi"));
-		fs.rename(Parameters.directory+movie.title, Parameters.directory+movie.newName+ext[0], function(err) {
-		    if ( err ) $rootScope.showToast(Parameters.failRename,'alert');
-			$rootScope.showToast(Parameters.successRename,'success');
+		fs.rename(movie.fullpath+movie.title, movie.fullpath+movie.newName+ext[0], function(err) {
+		    if ( err )
+		    	$rootScope.showToast(Parameters.failRename,'alert');
+		    else
+				$rootScope.showToast(Parameters.successRename,'success');
 
 		});
 		var closeEl = angular.element($event.target).parent().parent().parent().parent().children()[0];
 		angular.element(closeEl).triggerHandler("click");
-		infoMovie(cleanTitle(movie.newName));
+		infoMovie(cleanTitle(movie.newName+ext[0],movie.fullpath));
 		$scope.movieNotFound.splice($scope.movieNotFound.indexOf(movie),1);
 	}
 
@@ -322,10 +163,18 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
 
 	$scope.playMovie = function(movie){
 		if(typeof movie.fileName !="undefined")
-			gui.Shell.openItem(Parameters.directory+movie.fileName);
+			gui.Shell.openItem($rootScope.currentFolder+movie.fileName);
 		else
-			gui.Shell.openItem(Parameters.directory+movie.title);
+			gui.Shell.openItem($rootScope.currentFolder+movie.title);
 
+	}
+
+	$scope.openInExplorer = function(movie){
+		console.log()
+		if(typeof movie.fileName !="undefined")
+			gui.Shell.showItemInFolder(movie.fullpath+movie.fileName);
+		else
+			gui.Shell.showItemInFolder(movie.fullpath+movie.title);
 	}
 
 	function genreFilter(movie){
@@ -339,6 +188,13 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast', funct
 	    });
 	    return res;
 
+	}
+
+	$rootScope.reloadMovies = function(folder){
+		$scope.movieNotFound = new Array();
+		$scope.movieList = new Array();
+		$rootScope.currentFolder = folder.value+"/";
+		loadMovies(folder.value);
 	}
 
 }]);

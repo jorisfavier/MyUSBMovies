@@ -1,4 +1,7 @@
 <!-- <div deckgrid class="deckgrid" source="movieList" cardTemplate="app/components/movieCover/coverView.html?t=000"></div> -->
+
+<md-progress-circular class="waitforMovies" ng-if="loadNb > 0" md-mode="indeterminate"></md-progress-circular>
+<p ng-if="loadNb == 0 && movieList.length == 0 && movieNotFound.length == 0" class="alert not-found"><i class="icon-confused"></i> No video files found</p>
 <md-grid-list
       md-cols-sm="1" md-cols-md="2" md-cols-gt-md="4" 
       md-row-height-gt-md="2:3" md-row-height="1:1"
@@ -27,13 +30,16 @@
 			<img src="{{card.Poster}}" alt="{{card.Title}}">
 			<figcaption>
 				<p class="button-list">
-					<md-button ng-click="playMovie(card)" class="md-fab" aria-label="Play this movie">
+					<md-button ng-click="openInExplorer(card)" class="md-fab md-mini" aria-label="Open containing folder">
+						<i class="icon-folder-open"></i>
+					</md-button>
+					<md-button ng-click="playMovie(card)" class="md-fab md-mini" aria-label="Play this movie">
 						<i class="icon-play3"></i>
 					</md-button>
-					<md-button ng-click="hideMovie(card)" class="md-fab" aria-label="Hide this movie">
+					<md-button ng-click="hideMovie(card)" class="md-fab md-mini" aria-label="Hide this movie">
 						<i class="icon-eye-blocked"></i>
 					</md-button>
-					<md-button ng-morph-modal="config" class="md-fab" aria-label="More details">
+					<md-button ng-morph-modal="config" class="md-fab md-mini" aria-label="More details">
 						<i class="icon-eye"></i>
 					</md-button>
 				</p>
@@ -52,13 +58,16 @@
 			<h2 class="no-cover-title">{{card.title}}</h2>
 			<figcaption>
 				<p>
-					<md-button ng-click="playMovie(card)" class="md-fab" aria-label="Play this movie">
+					 <md-button ng-click="openInExplorer(card)" class="md-fab md-mini" aria-label="Open containing folder">
+						<i class="icon-folder-open"></i>
+					</md-button>
+					<md-button ng-click="playMovie(card)" class="md-fab md-mini" aria-label="Play this movie">
 						<i class="icon-play3"></i>
 					</md-button>
-					<md-button ng-click="hideMovie(card)" class="md-fab" aria-label="Hide this file">
+					<md-button ng-click="hideMovie(card)" class="md-fab md-mini" aria-label="Hide this file">
 						<i class="icon-eye-blocked"></i>
 					</md-button>
-					<md-button ng-morph-modal="configNoCover" class="md-fab" aria-label="More details">
+					<md-button ng-morph-modal="configNoCover" class="md-fab md-mini" aria-label="More details">
 						<i class="icon-pencil"></i>
 					</md-button>
 				</p>

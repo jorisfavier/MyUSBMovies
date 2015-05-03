@@ -197,8 +197,8 @@ figure.effect-winston p button i {
   opacity: 1;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  margin-left: 2px;
-    font-size: 1.6em;
+    font-size: 1.2em;
+    margin-left: 2px;
   line-height: 2.45;
 }
 figure.effect-winston p button,
@@ -208,7 +208,7 @@ figure.effect-winston p button.md-button.md-fab {
   transition: opacity 0.35s, transform 0.35s !important;
   -webkit-transform: translate3d(0,75px,0);
   transform: translate3d(0,75px,0);
-  margin-left: 20px;
+  margin-left: 10px;
 }
 md-content { margin-bottom: 20px;}
 #moviesList figure.effect-winston .md-button,
@@ -381,7 +381,10 @@ md-input-container.md-default-theme .md-input.search-input{ margin-top: 25px; co
 .toolbar .md-button.filterButton.active { color:#0099ef; }
 .genre-list .md-button.active { background: rgba(158,158,158,0.2); color: #fff;}
 md-grid-list{ margin-bottom: 20px; }
-
+.file-chooser{ margin-left: -100%; width: 500px; height: 100%; position: absolute; display: inline-block; opacity: 0; }
+.file-chooser:hover{ cursor: pointer; }
+.not-found{ text-align: center; padding: 20px; }
+.waitforMovies{ margin: 0 auto; margin-top: 20%; }
 
 
 /* Media queries */
