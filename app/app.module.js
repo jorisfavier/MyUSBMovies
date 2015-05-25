@@ -7,6 +7,17 @@ var app= angular.module('MyUSBMovieApp',
   ]);
 
 
+var gui = require('nw.gui');
+win = gui.Window.get();
+var nativeMenuBar = new gui.Menu({ type: "menubar" });
+try {
+nativeMenuBar.createMacBuiltin("My App");
+win.menu = nativeMenuBar;
+} catch (ex) {
+console.log(ex.message);
+}
+
+
 app.constant("Parameters", {
     "separators": ["\\.","\\-","_",],
     "uselessWords": ["720p",
@@ -45,4 +56,10 @@ app.constant("Parameters", {
     "failRename" : "An error occured when renaming the file !",
     "successHideFile" : "The file has been hidden from the app with success !",
     "failHideFile" : "An error occured when hidding the file !",
+    "errorNoVideo" : "No video files found",
+    "errorReadDir" : "An error occured when reading directory",
+    "failMoreInfo" : "We doesn't have more informations about this movie",
+    "failPlayMovie" : "An error occured when reading video file",
+    "failOpenMovie" : "An error occured when openning video file in the explorer",
+
 });

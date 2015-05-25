@@ -210,6 +210,7 @@ figure.effect-winston p button.md-button.md-fab {
   transform: translate3d(0,75px,0);
   margin-left: 10px;
 }
+figure.effect-winston p button.md-button.md-fab:nth-child(4){ margin-right: -3px; }
 md-content { margin-bottom: 20px;}
 #moviesList figure.effect-winston .md-button,
 #moviesList figure.effect-winston .md-button.md-fab,
@@ -385,6 +386,7 @@ md-grid-list{ margin-bottom: 20px; }
 .file-chooser:hover{ cursor: pointer; }
 .not-found{ text-align: center; padding: 20px; }
 .waitforMovies{ margin: 0 auto; margin-top: 20%; }
+.waitforGenre{ margin: 0 auto; margin-top: 20px; }
 
 
 /* Media queries */

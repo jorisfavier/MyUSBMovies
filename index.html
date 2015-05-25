@@ -27,7 +27,8 @@
                 </md-item>
           </md-list>
             <md-subheader class="category-header"><i class="icon-tag"></i> Categories</md-subheader>
-            <md-list class="genre-list">
+            <md-progress-circular class="waitforGenre" ng-if="loadNb > 0" md-mode="indeterminate"></md-progress-circular>
+            <md-list class="genre-list" ng-if="loadNb == 0">
                 <md-item>
                   <md-item-content>
                     <md-button ng-click="searchText.Genre = ''" ng-class="searchText.Genre == '' ? 'active' : ''">
@@ -37,7 +38,10 @@
                 </md-item>
                 <md-item ng-repeat="genre in genreList" class="">
                   <md-item-content>
-                    <md-button ng-click="searchText.Genre = genre" ng-class="searchText.Genre == genre ? 'active' : ''">
+                    <md-button ng-if="genre.length > 35" ng-click="searchText.Genre = genre" ng-class="searchText.Genre == genre ? 'active' : ''">
+                      {{genre | limitTo:32 }}...
+                    </md-button>
+                    <md-button ng-if="genre.length <= 35" ng-click="searchText.Genre = genre" ng-class="searchText.Genre == genre ? 'active' : ''">
                       {{genre}}
                     </md-button>
                   </md-item-content>

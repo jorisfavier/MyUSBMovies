@@ -24,5 +24,11 @@
   "dependencies": {
     "node-movie": "^2.0.0",
     "movie-title": "0.0.1"
+  },
+  "devDependencies": {
+    "karma": "^0.12.31",
+    "karma-nodewebkit-launcher": "0.0.12",
+    "jasmine-core": "^2.3.0",
+    "karma-jasmine": "^0.3.5"
   }
 }
