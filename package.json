@@ -13,8 +13,10 @@
   "window": {
     "toolbar": true,
     "resizable": true,
-    "width": 1000,
-    "height": 600,
+    "frame": true,
+    "fullscreen": false,
+    "width": 1440,
+    "height": 900,
     "min_width": 600,
     "min_height": 400,
     "position": "center"

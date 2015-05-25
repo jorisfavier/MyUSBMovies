@@ -15,6 +15,8 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 		}
 	};
 
+	console.log(process.versions['node-webkit']);
+
 	//Var containing the content of the alert toast
 	$rootScope.toastDetail = {};
 

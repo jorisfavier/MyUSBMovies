@@ -20,8 +20,11 @@
             <md-list class="genre-list">
                   <md-item-content>
                     <md-button>
+                        <md-tooltip>
+                          Change movie directory
+                        </md-tooltip>
                         {{currentFolder}}
-                        <input class="file-chooser" type="file" webkitdirectory directory multiple onchange="angular.element(this).scope().reloadMovies(this)"/>
+                        <input class="file-chooser" title="Change movie directory" type="file" webkitdirectory directory multiple onchange="angular.element(this).scope().reloadMovies(this)"/>
                     </md-button>
                   </md-item-content>
                 </md-item>
@@ -52,10 +55,17 @@
             <md-toolbar class="toolbar" layout="row">
                 <div class="md-toolbar-tools" layout-align-gt-sm="center">
                     <md-button ng-click="order = '-Released'" ng-class="order == '-Released'? 'active' : '' " class="filterButton">
-                    <i class="icon-calendar"></i> Release date</md-button>
+                      <md-tooltip>
+                        Order movies by release date
+                      </md-tooltip>
+                      <i class="icon-calendar"></i> Release date
+                    </md-button>
                     <div class="divider"></div>
                     <md-button ng-click="order = '-imdbRating'" ng-class="order != '-Released'? 'active' : ''" class="filterButton">
-                    <i class="icon-star"></i> Popularity</md-button>
+                      <md-tooltip>
+                        Order movies by IMDB rate
+                      </md-tooltip>
+                      <i class="icon-star"></i> Popularity</md-button>
                     <span flex></span>
                     <md-input-container md-no-float>
                       <input type="text" class="search-input" ng-model="searchText.Title" placeholder="Search a movie">
@@ -73,7 +83,7 @@
     <script src="assets/libs/angular-animate.min.js"></script>
     <script src="assets/libs/angular-aria.min.js"></script>
     <script src="assets/libs/angular-material.min.js"></script>
-    <script src="bower_components/angular-morph/dist/angular-morph.js"></script>
+    <script src="assets/libs/angular-morph.js"></script>
     <script src="assets/libs/angular-route.min.js"></script>
     <script src="assets/libs/roundProgress.min.js"></script>
     <script src="app/app.module.js"></script>
