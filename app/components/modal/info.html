@@ -2,7 +2,7 @@
   <span class="icon-close close"></span>
   <div class="header" layout="row" layout-wrap>
   	<h2 flex="66">{{movie.Title}}</h2>
-    <h2 flex="33" class="text-right"><small>{{movie.Year}}</small></h2>
+    <h2 flex="33" class="text-right"><small>{{formatDate(movie.Released)}}</small></h2>
 </div>
   <div class="body">
   	<div layout="row" layout-wrap>
@@ -26,7 +26,7 @@
       <div ng-init="knb = movie.imdbVotes.split(',');" class="stat-picto" flex="20">
         <div class="text-center">
           <i class="icon-bars"></i><br>
-          {{knb[0]}}K
+          {{movie.imdbVotes}}
         </div>
       </div>
       <div flex="20" class="duration stat-picto">

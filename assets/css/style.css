@@ -357,6 +357,7 @@ md-sidenav { background: #333; }
 }
 .md-sidenav-left{ background : #333; }
 .md-sidenav-left .titlezone{ background:#262626; }
+.draggable{ -webkit-app-region: drag; }
 md-toolbar h1 {
   font-weight: normal;
   color: #FFF;
@@ -387,6 +388,29 @@ md-grid-list{ margin-bottom: 20px; }
 .not-found{ text-align: center; padding: 20px; }
 .waitforMovies{ margin: 0 auto; margin-top: 20%; }
 .waitforGenre{ margin: 0 auto; margin-top: 20px; }
+
+
+.window-buttons { float: left; position:absolute; margin-left: 10px; }
+
+.window-button:focus { border : none; }
+.window-button {
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .1);
+  margin-left: 4px;
+  font-size: 0.3em;
+  padding: 3px;
+  color:transparent;
+}
+.window-button:hover,.window-buttons:hover > .window-button { color: rgba(0,0,0,0.4); }
+.window-button>i { font-size: 0.4em; color:#fff;}
+.window-button-close { background-color: #ff4545; }
+
+.window-button-hide { background-color: #ffbe03; }
+
+.window-button-full { background-color: #03d544; }
+.logo{ width:100px; }
+
 
 
 /* Media queries */

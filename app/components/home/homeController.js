@@ -28,6 +28,27 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 	};
 
 	/**
+	* Hide the window
+	**/
+	$rootScope.hideWindow = function(){
+		gui.Window.get().minimize();
+	}
+
+	/**
+	* Close the window
+	**/	
+	$rootScope.closeWindow = function(){
+		gui.Window.get().close();
+	}
+
+	/**
+	* Maximise the window
+	**/
+	$rootScope.maxWindow = function(){
+		gui.Window.get().maximize();
+	}
+
+	/**
 	* Set up the toast (content, template, position, classname) and show it
 	* @param {string} content message display by the toast
 	* @param {string} className class css added to the toast before showing it 
@@ -74,6 +95,19 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 			return "#4caf50";
 		}
 	}
+
+	/**
+	* Format a date to the correct format YYYY-MM-DD
+	* @param {date} the date to format 
+	**/
+	$scope.formatDate = function(date) {         
+                                
+        var yyyy = date.getFullYear().toString();                                    
+        var mm = (date.getMonth()+1).toString(); // getMonth() is zero-based         
+        var dd  = date.getDate().toString();             
+                            
+        return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]);
+   }; 
 
 
 
@@ -211,9 +245,9 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 		try{
 			var regexp="\\."+Parameters.extensions.join("|\\.");
 			var ext = movie.title.match(new RegExp(regexp, "gi"));
-
+			movie.newName = movie.newName.replace(new RegExp(" ", 'g'),'.');
 			var closeEl = (typeof $event != 'undefined') ? angular.element($event.target).parent().parent().parent().parent().children()[0] : "";
-			fs.renameSync(movie.fullpath+movie.title, movie.fullpath+movie.newName.replace(" ",".")+ext[0]);
+			fs.renameSync(movie.fullpath+movie.title, movie.fullpath+movie.newName+ext[0]);
 			$rootScope.showToast(Parameters.successRename,'success');
 			if(closeEl != "")
 				angular.element(closeEl).triggerHandler("click");
@@ -359,10 +393,9 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 	$scope.movieNotFound = new Array();
 	$scope.movieList = new Array();
 
-	//$rootScope.currentFolder = global.window.root;
 	$rootScope.currentFolder = "/Users/joris/Downloads/Folx/movie/";
-	$scope.loadMovies($rootScope.currentFolder);
-
+	$rootScope.currentFolder = global.window.root;
+	$scope.loadMovies($rootScope.currentFolder); 
 
 	
 

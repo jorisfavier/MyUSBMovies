@@ -1,5 +1,5 @@
 {
-  "name": "nwk-ngApp",
+  "name": "MyUSBMovies",
   "version": "0.0.1",
   "description": "MyUSBMovies",
   "main": "index.html",
@@ -11,9 +11,9 @@
     "osx"
   ],
   "window": {
-    "toolbar": true,
+    "toolbar": false,
     "resizable": true,
-    "frame": true,
+    "frame": false,
     "fullscreen": false,
     "width": 1440,
     "height": 900,

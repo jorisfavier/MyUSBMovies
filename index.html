@@ -14,7 +14,12 @@
     <div layout="row" flex>
         <md-sidenav layout="column" class="navbar md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
             <md-toolbar class="titlezone" layout="row">
-                <h1 class="md-toolbar-tools" layout-align-gt-sm="center">MyUSBMovies</h1>
+              <span class="window-buttons">
+                <span ng-click="closeWindow()" class="window-button window-button-close icon-close"></span>
+                <span ng-click="hideWindow()" class="window-button window-button-hide icon-minus"></span>
+                <span ng-click="maxWindow()" class="window-button window-button-full icon-plus"></span>
+              </span>  
+              <h1 class="md-toolbar-tools" layout-align-gt-sm="center"><img class="logo" src="assets/img/logoMyUSBMoviesTest.png" alt=""></h1>
             </md-toolbar>
             <md-subheader class="category-header"><i class="icon-folder"></i> Current movie folder</md-subheader>
             <md-list class="genre-list">
@@ -23,7 +28,7 @@
                         <md-tooltip>
                           Change movie directory
                         </md-tooltip>
-                        {{currentFolder}}
+                        {{currentFolder| limitTo:25 }}...
                         <input class="file-chooser" title="Change movie directory" type="file" webkitdirectory directory multiple onchange="angular.element(this).scope().reloadMovies(this)"/>
                     </md-button>
                   </md-item-content>
@@ -52,7 +57,7 @@
           </md-list>
         </md-sidenav>
         <div layout="column" flex id="content">
-            <md-toolbar class="toolbar" layout="row">
+            <md-toolbar class="toolbar draggable" layout="row">
                 <div class="md-toolbar-tools" layout-align-gt-sm="center">
                     <md-button ng-click="order = '-Released'" ng-class="order == '-Released'? 'active' : '' " class="filterButton">
                       <md-tooltip>
