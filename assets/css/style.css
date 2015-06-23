@@ -4,14 +4,14 @@
 
 /* demo login form */
 .movieInfo {
-  background: #0099ef;
+  background: #2196f3;
   width: 600px;
   height: 580px;
   color: #F0F1F0;
   border-radius: 30px;
 }
 .movieInfo.noInfo {
-  background: #0099ef;
+  background: #2196f3;
   width: 600px;
   height: 250px;
   color: #F0F1F0;
@@ -216,7 +216,7 @@ md-content { margin-bottom: 20px;}
 #moviesList figure.effect-winston .md-button.md-fab,
 #moviesList figure.effect-winston .md-button:hover,
 #moviesList figure.effect-winston .md-button.md-fab:hover 
-{ background: #0099ef; }
+{ /*background: #0099ef;*/ }
 
 figure.effect-winston:hover img,
 figure.effect-winston:hover .no-cover {
@@ -263,14 +263,14 @@ figure.effect-winston:hover p button.md-button.md-fab:first-child {
 }
 
 button.rounded{
-  width: 50px; height:50px; border-radius: 30px; background: #0099ef; outline: none; border: none;
+  width: 50px; height:50px; border-radius: 30px; /*background: #0099ef;*/ outline: none; border: none;
 }
 .movieInfo{ position: relative; padding: 20px; font-size: 1.313em;}
 .movieInfo .close { position:absolute; top:0; right: 0; }
 .movieInfo .header,
 .movieInfo .body,
 .movieInfo .footer{
-  background: #0099ef;
+  /*background: #0099ef;*/
   color: #fff;
 }
 .movieInfo .footer{ margin-top: 30px; }
@@ -345,6 +345,7 @@ md-sidenav { background: #333; }
 .list-genre{ list-style: none; padding: 0; margin-top: -5px; margin-top: 10px; }
 .no-cover-title{ position: absolute; top:0; z-index: 100; color: #fff; left: 0; display: block; width: 100%; padding: 20px;  }
 .close-toast{ margin-left: 20px; }
+.close-toast i{ color: #3c763d; }
 .alert{ 
   background-color: #f2dede !important;
   border-color: #ebccd1 !important;
@@ -380,7 +381,7 @@ md-toolbar h1 {
 md-toolbar.toolbar.md-default-theme{  color:#333;}
 .divider{ border-left: 1px solid #999; width: 1px; height: 30px; }
 md-input-container.md-default-theme .md-input.search-input{ margin-top: 25px; color:#999; font-size: 16px; }
-.toolbar .md-button.filterButton.active { color:#0099ef; }
+.toolbar .md-button.filterButton.active { color:#2196f3; }
 .genre-list .md-button.active { background: rgba(158,158,158,0.2); color: #fff;}
 md-grid-list{ margin-bottom: 20px; }
 .file-chooser{ margin-left: -100%; width: 500px; height: 100%; position: absolute; display: inline-block; opacity: 0; }
@@ -409,7 +410,7 @@ md-grid-list{ margin-bottom: 20px; }
 .window-button-hide { background-color: #ffbe03; }
 
 .window-button-full { background-color: #03d544; }
-.logo{ width:100px; }
+.logo{ width:125px; }
 
 
 

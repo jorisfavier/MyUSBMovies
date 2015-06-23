@@ -7,16 +7,22 @@ var app= angular.module('MyUSBMovieApp',
   ]);
 
 
+
+
 var gui = require('nw.gui');
 win = gui.Window.get();
 var nativeMenuBar = new gui.Menu({ type: "menubar" });
 try {
-nativeMenuBar.createMacBuiltin("My App");
-win.menu = nativeMenuBar;
+    nativeMenuBar.createMacBuiltin("MyUSBMovies");
+    win.menu = nativeMenuBar;
 } catch (ex) {
-console.log(ex.message);
+    console.log(ex.message);
 }
-
+app.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('indigo')
+    .accentPalette('blue');
+});
 
 app.constant("Parameters", {
     "separators": ["\\.","\\-","_",],
