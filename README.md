@@ -19,7 +19,7 @@ You can download stable builds:
 
 | *BUILD* | MAC / OSX | WINDOWS x32 | WINDOWS x64 |
 |:-------:|:---------:|:-----------:|:-----------:|
-|**STABLE** | [**1.0.0**](http://www.mediafire.com/download/rn4x0ozkk7s06bw/MyUSBMovies.zip) | [**1.0.0**](http://www.mediafire.com/download/2647wisli08u2ml/MyUSBMovies.exe) | [**1.0.0**](http://www.mediafire.com/download/bp6xask3kbzlwv3/MyUSBMovies-x64.exe) |
+|**STABLE** | [**1.0.0**](http://www.mediafire.com/download/77n50wrr48yzed2/MyUSBMovies.zip) | [**1.0.0**](http://www.mediafire.com/download/6dpzl6o97r1xl02/MyUSBMovies.exe) | [**1.0.0**](http://www.mediafire.com/download/1kzcq8qrgjik7i5/MyUSBMovies_x64.exe) |
 
 ## Dependencies & libraries
 
