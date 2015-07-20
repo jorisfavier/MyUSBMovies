@@ -1,6 +1,6 @@
 {
   "name": "MyUSBMovies",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "MyUSBMovies",
   "main": "index.html",
   "private": true,
@@ -8,7 +8,9 @@
     "node",
     "webkit",
     "win",
-    "osx"
+    "osx",
+    "movies",
+    "usb"
   ],
   "window": {
     "toolbar": false,
@@ -19,7 +21,8 @@
     "height": 900,
     "min_width": 600,
     "min_height": 400,
-    "position": "center"
+    "position": "center",
+    "icon": "./assets/img/logoMyUSBMovies.ico"
   },
   "author": "Joris Favier",
   "license": "MIT",
@@ -31,6 +34,7 @@
     "karma": "^0.12.31",
     "karma-nodewebkit-launcher": "0.0.12",
     "jasmine-core": "^2.3.0",
-    "karma-jasmine": "^0.3.5"
+    "karma-jasmine": "^0.3.5",
+    "nw-builder": "^2.0.1"
   }
 }

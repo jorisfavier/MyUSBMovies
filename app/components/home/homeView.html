@@ -1,7 +1,7 @@
 <!-- <div deckgrid class="deckgrid" source="movieList" cardTemplate="app/components/movieCover/coverView.html?t=000"></div> -->
 <md-progress-circular class="waitforMovies" ng-if="loadNb > 0" value="{{determinateValue}}" md-mode="determinate"></md-progress-circular>
-<p ng-if="loadNb == 0 && movieList.length == 0 && movieNotFound.length == 0" class="alert not-found"><i class="icon-confused"></i> {{errorLoadingMovies}}</p>
-<div id="list" ng-if="loadNb == 0">
+<p ng-if="loadNb <= 0 && movieList.length == 0 && movieNotFound.length == 0" class="alert not-found"><i class="icon-confused"></i> {{errorLoadingMovies}}</p>
+<div id="list" ng-if="loadNb <= 0">
 	<md-grid-list
 	      md-cols-sm="1" md-cols-md="2" md-cols-gt-md="4" 
 	      md-row-height-gt-md="2:3" md-row-height="1:1"

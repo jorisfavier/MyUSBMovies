@@ -126,27 +126,27 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 				return;
 		}
 
-		fs.readdir(folder, function (err, files) { // '/' denotes the root folder
-			if (err){
-				$scope.errorLoadingMovies = Parameters.errorReadDir;
-				return;
+		var files = fs.readdirSync(folder);
+		//each file will be processed by the app, 
+		//so in order to determine the loading percentage we keep track of the files processed by the app
+		$rootScope.loadNb += files.length;
+		$rootScope.loadTotal += files.length;
+
+		files.forEach( function (file) {
+			var stats = fs.lstatSync(folder+"/"+file)
+			if (stats.isDirectory()) { //condition for identifying folders
+				//if it's a folder we don't process the file but we call the function recursively
+				$rootScope.loadNb--;
+				$scope.loadMovies(folder+"/"+file);
 			}
-			$rootScope.loadNb += files.length;
-			$rootScope.loadTotal += files.length;
-			files.forEach( function (file) {
-				fs.lstat(folder+"/"+file, function(err, stats) {
-					if (!err && stats.isDirectory()) { //conditing for identifying folders
-						$rootScope.loadNb--;
-						$scope.loadMovies(folder+"/"+file);
-					}
-					else if($scope.isMovieType(file)){
-						//$scope.fileList.push(cleanTitle(file));
-						$scope.infoMovie($scope.cleanTitle(file, folder+"/"));
-					}
-					else
-						$rootScope.loadNb--;
-				});
-			});
+			else if($scope.isMovieType(file)){
+				$scope.videoFiles.push($scope.cleanTitle(file, folder+"/"));
+			}
+			else{
+				//increase the loading percentage
+				$rootScope.loadNb--;
+			}
+			
 		});
 	}
 
@@ -184,17 +184,20 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 			    else{
 			    	if(data.Type != "series"){
 				    	data.fileName = title.original;
+				    	//This way we can order the movies by Date
 				    	data.Released = new Date(data.Released);
+				    	//This way we can order the movies by rate
 				    	data.imdbRating = parseFloat(data.imdbRating);
 				    	data.fullpath = title.fullpath;
 				    	if(typeof data.Plot != "undefined" && data.Plot.length > 550){
+				    		//if the plot is too long it break the display
 				    		data.Plot = data.Plot.substring(0,550)+"...";
 				    	}
 			    		$scope.movieList.push(data);
 						$rootScope.genreList = $scope.genreFilter($scope.movieList);
 					}
-
 			    }
+			    //the file has been processed we increase the loading percentage
 			    $rootScope.loadNb--;
 	        });
 		});
@@ -357,7 +360,12 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 		$scope.movieNotFound = new Array();
 		$scope.movieList = new Array();
 		$rootScope.currentFolder = folder.value+"/";
+		$scope.videoFiles = [];
 		$scope.loadMovies(folder.value);
+		$interval(function(index) {
+	        $scope.infoMovie($scope.videoFiles[index]);
+      	}, 300, $scope.videoFiles.length, true);
+      	//restart the loading process
 		loading = $interval(function() {
 	        loadingFunc();
       	}, 100, 0, true);
@@ -368,7 +376,7 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
 	$rootScope.searchText = {};
 	$rootScope.order = "-imdbRating";
 
-	//dependency
+	//dependencies
 	var fs = require('fs');
 	var gui = require("nw.gui");
 	var movieTitle = require('movie-title');
@@ -390,12 +398,17 @@ app.controller('HomeCtrl', ['$scope','$rootScope','Parameters','$mdToast','$inte
         loadingFunc();
       }, 100, 0, true);
 
-	$scope.movieNotFound = new Array();
-	$scope.movieList = new Array();
-
+	$scope.movieNotFound = [];
+	$scope.movieList = [];
+	$scope.videoFiles = [];
 	$rootScope.currentFolder = "/Users/joris/Downloads/Folx/movie/";
 	$rootScope.currentFolder = global.window.root;
 	$scope.loadMovies($rootScope.currentFolder); 
+
+	//once each video files have been found, we call the IMDB API every 300ms in order to avoid overloading the calls
+	$interval(function(index) {
+        $scope.infoMovie($scope.videoFiles[index]);
+      }, 300, $scope.videoFiles.length, true);
 
 	
 
