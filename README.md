@@ -11,7 +11,7 @@ That's why I created **MyUSBMovies**, it allows you to scan a chosen directory a
 
 This application is a stand-alone so no need to install it.
 
-![MyUSBMovies Screenshot 2](/assets/img/screenshot-02.png?raw=true)
+![MyUSBMovies Screenshot 2](http://i.imgur.com/1KSIbtF.gif)
 
 
 ## Download
