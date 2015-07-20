@@ -59,23 +59,23 @@
         <div layout="column" flex id="content">
             <md-toolbar class="toolbar draggable" layout="row">
                 <div class="md-toolbar-tools" layout-align-gt-sm="center">
-                    <md-button ng-click="order = '-Released'" ng-class="order == '-Released'? 'active' : '' " class="filterButton">
+                    <md-button style="-webkit-app-region: no-drag" ng-click="order = '-Released'" ng-class="order == '-Released'? 'active' : '' " class="filterButton">
                       <md-tooltip>
                         Order movies by release date
                       </md-tooltip>
                       <i class="icon-calendar"></i> Release date
                     </md-button>
                     <div class="divider"></div>
-                    <md-button ng-click="order = '-imdbRating'" ng-class="order != '-Released'? 'active' : ''" class="filterButton">
+                    <md-button style="-webkit-app-region: no-drag" ng-click="order = '-imdbRating'" ng-class="order != '-Released'? 'active' : ''" class="filterButton">
                       <md-tooltip>
                         Order movies by IMDB rate
                       </md-tooltip>
                       <i class="icon-star"></i> Popularity</md-button>
                     <span flex></span>
                     <md-input-container md-no-float>
-                      <input type="text" class="search-input" ng-model="searchText.Title" placeholder="Search a movie">
+                      <input style="-webkit-app-region: no-drag" type="text" class="search-input" ng-model="searchText.Title" placeholder="Search a movie">
                     </md-input-container>
-                    <md-button class="search-button"><i class="icon-search"></i></md-button>
+                    <md-button style="-webkit-app-region: no-drag" class="search-button"><i class="icon-search"></i></md-button>
                 </div>
             </md-toolbar>
             <md-content layout="column" flex class="md-padding" ng-view>

@@ -1,8 +1,8 @@
 var app= angular.module('MyUSBMovieApp',
   [
     'ngMorph',
-    'ngRoute',
     'ngMaterial',
+    'ngRoute',
     'angular-svg-round-progress',
   ]);
 
